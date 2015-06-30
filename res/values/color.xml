@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="activity_title_color">#999999</color>
+    <color name="single_page_content_font_color">#000000</color>
+
+</resources>
