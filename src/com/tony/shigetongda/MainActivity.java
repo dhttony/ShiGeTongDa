@@ -56,8 +56,7 @@ public class MainActivity extends Activity implements OnTouchListener {
 		int width = display.getWidth();
 		int height = display.getHeight();
 
-		RelativeLayout.LayoutParams lp = (LayoutParams) WoYaoJiaMengLayout
-				.getLayoutParams();
+		RelativeLayout.LayoutParams lp = (LayoutParams) WoYaoJiaMengLayout.getLayoutParams();
 
 		lp.height = (height - 110) / 3;
 		activityMainLayout.updateViewLayout(WoYaoJiaMengLayout, lp);
@@ -72,7 +71,7 @@ public class MainActivity extends Activity implements OnTouchListener {
 
 	@Override
 	public boolean onTouch(View v, MotionEvent event) {
-		Log.d("tony", "onTouch v = " + v + ", event = " + event.getAction());
+		Log.d("tony", "MainActivity onTouch v = " + v + ", event = " + event.getAction());
 		Drawable background = v.getBackground();
 		switch (event.getAction()) {
 		case MotionEvent.ACTION_DOWN:
@@ -82,9 +81,20 @@ public class MainActivity extends Activity implements OnTouchListener {
 		case MotionEvent.ACTION_UP:
 			background.setAlpha(255);
 			Intent intent = new Intent();
+			int pageIndex = Common.INDEX_GONG_SI_JIAN_JIE;
 			if (v == GongSiJianJieLayout) {
-				intent.setClass(MainActivity.this, GongSiJianJieActivity.class);
+				pageIndex = Common.INDEX_GONG_SI_JIAN_JIE;
+			} else if (v == ZhaoShangJianJieLayout) {
+				pageIndex = Common.INDEX_ZHAO_SHANG_JIAN_JIE;
+			} else if (v == HeZuoMoShiLayout) {
+				pageIndex = Common.INDEX_HE_ZUO_MO_SHI;
+			} else if (v == HeZuoZheLiRunDianLayout) {
+				pageIndex = Common.INDEX_HE_ZUO_ZHE_LI_RUN_DIAN;
+			} else if (v == WoYaoJiaMengLayout) {
+				pageIndex = Common.INDEX_WO_YAO_JIA_MENG;
 			}
+			intent.setClass(MainActivity.this, SinglePageActivity.class);
+			intent.putExtra(Common.PAGE_INDEX, pageIndex);
 			startActivity(intent);
 			break;
 

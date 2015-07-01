@@ -23,13 +23,14 @@
             android:layout_centerInParent="true"
             android:text="@string/gong_si_jian_jie_title"
             android:textColor="#FFFFFF"
-            android:textSize="30sp" />
-        
+            android:textSize="20sp" />
+
         <ImageView
             android:id="@+id/back"
             android:layout_width="@dimen/activity_title_bar_height"
             android:layout_height="match_parent"
-            android:src="@drawable/arrow_back"/>
+            android:src="@drawable/arrow_back" 
+            android:padding="5dp"/>
     </RelativeLayout>
 
     <ImageView
@@ -71,14 +72,15 @@
                 android:layout_toRightOf="@id/arrow_left_arrow"
                 android:gravity="center"
                 android:text="没有啦"
-                android:textColor="@color/activity_title_color" />
+                android:textColor="@color/arrow_text_color" />
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/arrow_right"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_alignParentRight="true" >
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/arrow_left" >
 
             <ImageView
                 android:id="@+id/arrow_right_arrow"
@@ -97,17 +99,9 @@
                 android:layout_toLeftOf="@id/arrow_right_arrow"
                 android:gravity="center"
                 android:text="没有啦"
-                android:textColor="@color/activity_title_color" />
+                android:textColor="@color/arrow_text_color" />
         </RelativeLayout>
     </RelativeLayout>
-
-    <!--
-         <ScrollView
-        android:id="@+id/scroll_view"
-        android:layout_width="match_parent"
-        android:layout_below="@id/banner" >
-    </ScrollView>
-    -->
 
     <TextView
         android:id="@+id/content"

@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="14"
         android:targetSdkVersion="17" />
 
     <application
@@ -27,7 +27,7 @@
             android:name="com.tony.shigetongda.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.tony.shigetongda.GongSiJianJieActivity"
+            android:name="com.tony.shigetongda.SinglePageActivity"
             android:screenOrientation="portrait" />
     </application>
 

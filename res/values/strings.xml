@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">ShiGeTongDa</string>
+    <string name="app_name">世格通达</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="activity_title_main">世格通达</string>
-    
     <string name="gong_si_jian_jie_title">公司简介</string>
     <string name="gong_si_jian_jie_content">福州市世格通达财富管理有限公司旨在为全国各地期货、股票体验交流中心的合作发展提供资金和资源支持、投资者教育、工作人员培训等相关服务。</string>
 

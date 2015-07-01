@@ -23,7 +23,16 @@
             android:layout_centerInParent="true"
             android:text="@string/activity_title_main"
             android:textColor="#FFFFFF"
-            android:textSize="30sp" />
+            android:textSize="20sp" />
+        
+             <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text="仅供参考"
+            android:textColor="#FF0000"
+            android:textSize="8sp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -38,8 +47,8 @@
             android:layout_width="match_parent"
             android:layout_height="150dip"
             android:layout_centerInParent="true"
-            android:layout_marginTop="@dimen/activity_horizontal_margin"
-            android:background="#FF3300" >
+            android:layout_margin="@dimen/activity_center_margin"
+            android:background="#FF6666" >
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -49,11 +58,11 @@
                 <ImageView
                     android:id="@+id/wo_yao_jia_meng_icon"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/main_icon_height"
+                    android:layout_height="@dimen/main_icon_height_large"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="@dimen/main_icon_margin_top"
-                    android:src="@drawable/gongsijianjie_icon" />
+                    android:src="@drawable/woyaojiameng_icon" />
 
                 <TextView
                     android:id="@+id/wo_yao_jia_meng_text"
@@ -64,7 +73,7 @@
                     android:layout_marginTop="@dimen/main_text_margin_top"
                     android:text="我要加盟"
                     android:textColor="#FFFFFF"
-                    android:textSize="@dimen/main_text_font_size" />
+                    android:textSize="@dimen/main_text_font_size_large" />
             </RelativeLayout>
         </RelativeLayout>
 
@@ -82,7 +91,8 @@
                 android:layout_width="0dip"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#9966CC" >
+                android:background="#9999FF" 
+                android:layout_margin="@dimen/activity_center_margin">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -115,9 +125,9 @@
                 android:id="@+id/zhao_shang_jian_jie"
                 android:layout_width="0dip"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_margin="@dimen/activity_center_margin"
                 android:layout_weight="1"
-                android:background="#3399CC" >
+                android:background="#00CCFF" >
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -131,7 +141,7 @@
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="@dimen/main_icon_margin_top"
-                        android:src="@drawable/gongsijianjie_icon" />
+                        android:src="@drawable/zhaoshangjianjie_icon" />
 
                     <TextView
                         android:id="@+id/zhao_shang_jian_jie_text"
@@ -153,7 +163,6 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_below="@+id/wo_yao_jia_meng"
-            android:layout_marginTop="@dimen/activity_horizontal_margin"
             android:background="#FFFFFF"
             android:orientation="horizontal" >
 
@@ -162,7 +171,8 @@
                 android:layout_width="0dip"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#CC6666" >
+                android:background="#FF6600" 
+                android:layout_margin="@dimen/activity_center_margin">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -176,7 +186,7 @@
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="@dimen/main_icon_margin_top"
-                        android:src="@drawable/gongsijianjie_icon" />
+                        android:src="@drawable/hezuomoshi_icon" />
 
                     <TextView
                         android:id="@+id/he_zuo_mo_shi_text"
@@ -195,9 +205,9 @@
                 android:id="@+id/he_zuo_zhe_li_run_dian"
                 android:layout_width="0dip"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_margin="@dimen/activity_center_margin"
                 android:layout_weight="1"
-                android:background="#00CC33" >
+                android:background="#FFCC00" >
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -211,7 +221,7 @@
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="@dimen/main_icon_margin_top"
-                        android:src="@drawable/gongsijianjie_icon" />
+                        android:src="@drawable/hezuozhelirundian_icon" />
 
                     <TextView
                         android:id="@+id/he_zuo_zhe_li_run_dian_text"
