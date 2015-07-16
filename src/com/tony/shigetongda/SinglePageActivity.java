@@ -1,5 +1,9 @@
 package com.tony.shigetongda;
 
+import java.io.InputStream;
+
+import org.apache.http.util.EncodingUtils;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
@@ -13,6 +17,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class SinglePageActivity extends Activity implements OnTouchListener {
+
+	private static final String ENCODING = "UTF-8";
 
 	private TextView contentTextView;
 	private ImageView backButtonImageView;
@@ -78,35 +84,36 @@ public class SinglePageActivity extends Activity implements OnTouchListener {
 		case Common.INDEX_GONG_SI_JIAN_JIE:
 			activityTitle = "公司简介";
 			bannerBackgroundResourceID = R.drawable.gongsijianjie_background;
-			content = "\t\t福州市世格通达财富管理有限公司旨在为全国各地期货、股票体验交流中心的合作发展提供资金和资源支持、投资者教育、工作人员培训等相关服务。";
+			// content =
+			content = getFromAssets("GongSiJianJie.txt");
 			arrowLeftText = "";
 			arrowRightText = "招商简介";
 			break;
 		case Common.INDEX_ZHAO_SHANG_JIAN_JIE:
 			activityTitle = "招商简介";
 			bannerBackgroundResourceID = R.drawable.zhaoshangjianjie_background;
-			content = "\t\t随着金融机构人民币贷款和存款基准利率持续下调，以及房地产市场长期低迷，大量资金涌入股票、股指期货市场，致使股指屡创新高，成交量大幅提升，特别是股指期货的做空机制，T+0交易模式，保证金制度（以小博大）吸引了大量投资者参于，趁着利好的东风和高额的利润回报股指期货俱乐部（股指、股票交流体验中心）兴起。\n\n\t\t股指期货体验交流中心是一种新的金融投资模式，是以股指期货为投资对象，以合作、代理为前提，以民间借贷和会员信用为基础，不占用客户保证金即可进行股指期货交易的一种新模式。\n\n\t\t股指期货全称为股票价格指数期货，是指以股价指数为标的物的标准化期货合约。双方约定在未来的某个特定日期，按照事先确定的股价指数的大小，采用现金交割的方式，进行标的指数的买卖。";
+			content = getFromAssets("ZhaoShangJianJie.txt");
 			arrowLeftText = "公司简介";
 			arrowRightText = "合作模式";
 			break;
 		case Common.INDEX_HE_ZUO_MO_SHI:
 			activityTitle = "合作模式";
 			bannerBackgroundResourceID = R.drawable.hezuomoshi_background;
-			content = " \t\t此处需要沟通后填入相应内容";
+			content = getFromAssets("HeZuoMoShi.txt");
 			arrowLeftText = "招商简介";
 			arrowRightText = "合作者利润点";
 			break;
 		case Common.INDEX_HE_ZUO_ZHE_LI_RUN_DIAN:
 			activityTitle = "合作者利润点";
 			bannerBackgroundResourceID = R.drawable.hezuozhelirundian_background;
-			content = "\t\t投资者利润：一个股指交流体验中心（股指俱乐部）日均5名体验交易客户，一个客户日均体验交易3次，一天15次，15次Х300元/手=4500元，每月22个交易日，总计为9900元，根据实际情况一般一个交流体验中心（股指俱乐部）日均收入在一万左右。";
+			content = getFromAssets("HeZuoZheLiRunDian.txt");
 			arrowLeftText = "合作模式";
 			arrowRightText = "我要加盟";
 			break;
 		case Common.INDEX_WO_YAO_JIA_MENG:
 			activityTitle = "我要加盟";
 			bannerBackgroundResourceID = R.drawable.woyaojiameng_background;
-			content = "\t\t我能做吗？我有风险吗？请联系我们\n\t\t\t\t1、我不懂金融，不会炒股票、期货，可以做吗？\n\t\t\t\t2、我需要投入多少资金？\n\t\t\t\t3、有哪些风险需要注意？\n\n\t\t合作、加盟我们需要做什么？\n\t\t\t\t1、营业场所\n\t\t\t\t2、环境舒适面积≦ 200平方，提供茶水零食水果，中餐\n\t\t\t\t3、成本价硬件采购，硬件配置，场地布置（电视电脑网络布置）每层：一体机两台（一台下单一台记录），60寸电视配套  苹果mini电脑（看行情），打印机，路由器，插板， 网线。（温馨提示牌 借款合同 结算单 日报表）\n\t\t\t\t4、准备部分自有周转资金（一个普通规模的股指交流体验中心（股指俱乐部）需要占用200-500万的资金，合作、加盟我们只需提供10%的资金作为保证金，以及支付每月1.4%的资金费用）。";
+			content = getFromAssets("WoYaoJiaMeng.txt");
 			arrowLeftText = "合作者利润点";
 			arrowRightText = "";
 			break;
@@ -167,5 +174,23 @@ public class SinglePageActivity extends Activity implements OnTouchListener {
 			break;
 		}
 		return true;
+	}
+
+	// 从assets 文件夹中获取文件并读取数据
+	public String getFromAssets(String fileName) {
+		String result = "";
+		try {
+			InputStream in = getResources().getAssets().open(fileName);
+			// 获取文件的字节数
+			int lenght = in.available();
+			// 创建byte数组
+			byte[] buffer = new byte[lenght];
+			// 将文件中的数据读到byte数组中
+			in.read(buffer);
+			result = EncodingUtils.getString(buffer, ENCODING);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 }
