@@ -10,8 +10,9 @@ import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.RelativeLayout.LayoutParams;
 
 public class MainActivity extends Activity implements OnTouchListener {
 
@@ -21,6 +22,9 @@ public class MainActivity extends Activity implements OnTouchListener {
 	private RelativeLayout ZhaoShangJianJieLayout;
 	private RelativeLayout HeZuoMoShiLayout;
 	private RelativeLayout HeZuoZheLiRunDianLayout;
+	private RelativeLayout YePanXiangMuLayout;
+
+	private LinearLayout middleLayout;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +53,11 @@ public class MainActivity extends Activity implements OnTouchListener {
 		HeZuoZheLiRunDianLayout = (RelativeLayout) findViewById(R.id.he_zuo_zhe_li_run_dian);
 		HeZuoZheLiRunDianLayout.setOnTouchListener(this);
 
+		YePanXiangMuLayout = (RelativeLayout) findViewById(R.id.ye_pan);
+		YePanXiangMuLayout.setOnTouchListener(this);
+
+		middleLayout = (LinearLayout) findViewById(R.id.middle_layout);
+
 	}
 
 	private void resizeEverything() {
@@ -56,10 +65,10 @@ public class MainActivity extends Activity implements OnTouchListener {
 		int width = display.getWidth();
 		int height = display.getHeight();
 
-		RelativeLayout.LayoutParams lp = (LayoutParams) WoYaoJiaMengLayout.getLayoutParams();
+		LayoutParams lp = middleLayout.getLayoutParams();
 
 		lp.height = (height - 110) / 3;
-		activityMainLayout.updateViewLayout(WoYaoJiaMengLayout, lp);
+		activityMainLayout.updateViewLayout(middleLayout, lp);
 	}
 
 	@Override
@@ -90,6 +99,8 @@ public class MainActivity extends Activity implements OnTouchListener {
 				pageIndex = Common.INDEX_HE_ZUO_MO_SHI;
 			} else if (v == HeZuoZheLiRunDianLayout) {
 				pageIndex = Common.INDEX_HE_ZUO_ZHE_LI_RUN_DIAN;
+			} else if (v == YePanXiangMuLayout) {
+				pageIndex = Common.INDEX_YE_PAN_XIANG_MU;
 			} else if (v == WoYaoJiaMengLayout) {
 				pageIndex = Common.INDEX_WO_YAO_JIA_MENG;
 			}

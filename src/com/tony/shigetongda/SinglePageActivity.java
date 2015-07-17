@@ -76,50 +76,43 @@ public class SinglePageActivity extends Activity implements OnTouchListener {
 	private void updateViewByIndex(int pageIndex) {
 		int bannerBackgroundResourceID = R.drawable.gongsijianjie_background;
 		CharSequence content = "";
-		CharSequence arrowLeftText = "";
-		CharSequence arrowRightText = "";
-		CharSequence activityTitle = "";
+		// CharSequence arrowLeftText = "";
+		// CharSequence arrowRightText = "";
 
 		switch (pageIndex) {
 		case Common.INDEX_GONG_SI_JIAN_JIE:
-			activityTitle = "公司简介";
 			bannerBackgroundResourceID = R.drawable.gongsijianjie_background;
 			// content =
 			content = getFromAssets("GongSiJianJie.txt");
-			arrowLeftText = "";
-			arrowRightText = "招商简介";
 			break;
 		case Common.INDEX_ZHAO_SHANG_JIAN_JIE:
-			activityTitle = "招商简介";
 			bannerBackgroundResourceID = R.drawable.zhaoshangjianjie_background;
 			content = getFromAssets("ZhaoShangJianJie.txt");
-			arrowLeftText = "公司简介";
-			arrowRightText = "合作模式";
 			break;
 		case Common.INDEX_HE_ZUO_MO_SHI:
-			activityTitle = "合作模式";
 			bannerBackgroundResourceID = R.drawable.hezuomoshi_background;
 			content = getFromAssets("HeZuoMoShi.txt");
-			arrowLeftText = "招商简介";
-			arrowRightText = "合作者利润点";
 			break;
 		case Common.INDEX_HE_ZUO_ZHE_LI_RUN_DIAN:
-			activityTitle = "合作者利润点";
 			bannerBackgroundResourceID = R.drawable.hezuozhelirundian_background;
 			content = getFromAssets("HeZuoZheLiRunDian.txt");
-			arrowLeftText = "合作模式";
-			arrowRightText = "我要加盟";
+			break;
+		case Common.INDEX_YE_PAN_XIANG_MU:
+			bannerBackgroundResourceID = R.drawable.yepan_background;
+			content = getFromAssets("YePan.txt");
 			break;
 		case Common.INDEX_WO_YAO_JIA_MENG:
-			activityTitle = "我要加盟";
 			bannerBackgroundResourceID = R.drawable.woyaojiameng_background;
 			content = getFromAssets("WoYaoJiaMeng.txt");
-			arrowLeftText = "合作者利润点";
-			arrowRightText = "";
 			break;
 		default:
 			break;
 		}
+
+		CharSequence activityTitle = Common.TEXT[pageIndex];
+		CharSequence arrowLeftText = pageIndex == 0 ? "" : Common.TEXT[pageIndex - 1];
+		CharSequence arrowRightText = pageIndex == Common.TEXT.length - 1 ? ""
+				: Common.TEXT[pageIndex + 1];
 
 		bannerImageView.setImageResource(bannerBackgroundResourceID);
 		contentTextView.setText(content);

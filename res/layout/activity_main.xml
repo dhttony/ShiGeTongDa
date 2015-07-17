@@ -24,15 +24,15 @@
             android:text="@string/activity_title_main"
             android:textColor="#FFFFFF"
             android:textSize="20sp" />
-        
-             <TextView
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:text="仅供参考"
             android:textColor="#FF0000"
-            android:textSize="8sp" />
+            android:textSize="12sp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -42,46 +42,94 @@
         android:layout_below="@id/activity_title_layout"
         android:layout_marginTop="@dimen/activity_horizontal_margin" >
 
-        <RelativeLayout
-            android:id="@+id/wo_yao_jia_meng"
+        <!-- 中间部分 -->
+
+        <LinearLayout
+            android:id="@+id/middle_layout"
             android:layout_width="match_parent"
             android:layout_height="150dip"
             android:layout_centerInParent="true"
-            android:layout_margin="@dimen/activity_center_margin"
-            android:background="#FF6666" >
+            android:background="#FFFFFF"
+            android:orientation="horizontal" >
 
             <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true" >
+                android:id="@+id/he_zuo_mo_shi"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/activity_center_margin"
+                android:layout_weight="1"
+                android:background="#FF6600" >
 
-                <ImageView
-                    android:id="@+id/wo_yao_jia_meng_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/main_icon_height_large"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="@dimen/main_icon_margin_top"
-                    android:src="@drawable/woyaojiameng_icon" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" >
 
-                <TextView
-                    android:id="@+id/wo_yao_jia_meng_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/main_text_height"
-                    android:layout_below="@id/wo_yao_jia_meng_icon"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="@dimen/main_text_margin_top"
-                    android:text="我要加盟"
-                    android:textColor="#FFFFFF"
-                    android:textSize="@dimen/main_text_font_size_large" />
+                    <ImageView
+                        android:id="@+id/he_zuo_mo_shi_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/main_icon_height"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/main_icon_margin_top"
+                        android:src="@drawable/hezuomoshi_icon" />
+
+                    <TextView
+                        android:id="@+id/he_zuo_mo_shi_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/main_text_height"
+                        android:layout_below="@id/he_zuo_mo_shi_icon"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/main_text_margin_top"
+                        android:text="合作模式"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/main_text_font_size" />
+                </RelativeLayout>
             </RelativeLayout>
-        </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/he_zuo_zhe_li_run_dian"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/activity_center_margin"
+                android:layout_weight="1"
+                android:background="#FFCC00" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" >
+
+                    <ImageView
+                        android:id="@+id/he_zuo_zhe_li_run_dian_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/main_icon_height"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/main_icon_margin_top"
+                        android:src="@drawable/hezuozhelirundian_icon" />
+
+                    <TextView
+                        android:id="@+id/he_zuo_zhe_li_run_dian_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/main_text_height"
+                        android:layout_below="@id/he_zuo_zhe_li_run_dian_icon"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/main_text_margin_top"
+                        android:text="合作者利润点"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/main_text_font_size" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <!-- 上面部分 -->
 
         <LinearLayout
             android:id="@+id/top_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@id/wo_yao_jia_meng"
+            android:layout_above="@id/middle_layout"
             android:layout_alignParentTop="true"
             android:background="#FFFFFF"
             android:orientation="horizontal" >
@@ -90,9 +138,9 @@
                 android:id="@+id/gong_si_jian_jie"
                 android:layout_width="0dip"
                 android:layout_height="match_parent"
+                android:layout_margin="@dimen/activity_center_margin"
                 android:layout_weight="1"
-                android:background="#9999FF" 
-                android:layout_margin="@dimen/activity_center_margin">
+                android:background="#9999FF" >
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -157,22 +205,24 @@
             </RelativeLayout>
         </LinearLayout>
 
+        <!-- 下面部分 -->
+
         <LinearLayout
             android:id="@+id/bottom_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_below="@+id/wo_yao_jia_meng"
+            android:layout_below="@+id/middle_layout"
             android:background="#FFFFFF"
             android:orientation="horizontal" >
 
             <RelativeLayout
-                android:id="@+id/he_zuo_mo_shi"
+                android:id="@+id/ye_pan"
                 android:layout_width="0dip"
                 android:layout_height="match_parent"
+                android:layout_margin="@dimen/activity_center_margin"
                 android:layout_weight="1"
-                android:background="#FF6600" 
-                android:layout_margin="@dimen/activity_center_margin">
+                android:background="#8EE5EE" >
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -180,34 +230,34 @@
                     android:layout_centerInParent="true" >
 
                     <ImageView
-                        android:id="@+id/he_zuo_mo_shi_icon"
+                        android:id="@+id/ye_pan_icon"
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/main_icon_height"
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="@dimen/main_icon_margin_top"
-                        android:src="@drawable/hezuomoshi_icon" />
+                        android:src="@drawable/yepan_icon" />
 
                     <TextView
-                        android:id="@+id/he_zuo_mo_shi_text"
+                        android:id="@+id/ye_pan_text"
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/main_text_height"
-                        android:layout_below="@id/he_zuo_mo_shi_icon"
+                        android:layout_below="@id/ye_pan_icon"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="@dimen/main_text_margin_top"
-                        android:text="合作模式"
+                        android:text="夜盘项目"
                         android:textColor="#FFFFFF"
                         android:textSize="@dimen/main_text_font_size" />
                 </RelativeLayout>
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/he_zuo_zhe_li_run_dian"
+                android:id="@+id/wo_yao_jia_meng"
                 android:layout_width="0dip"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/activity_center_margin"
                 android:layout_weight="1"
-                android:background="#FFCC00" >
+                android:background="#FF6666" >
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -215,22 +265,22 @@
                     android:layout_centerInParent="true" >
 
                     <ImageView
-                        android:id="@+id/he_zuo_zhe_li_run_dian_icon"
+                        android:id="@+id/wo_yao_jia_meng_icon"
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/main_icon_height"
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="@dimen/main_icon_margin_top"
-                        android:src="@drawable/hezuozhelirundian_icon" />
+                        android:src="@drawable/woyaojiameng_icon" />
 
                     <TextView
-                        android:id="@+id/he_zuo_zhe_li_run_dian_text"
+                        android:id="@+id/wo_yao_jia_meng_text"
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/main_text_height"
-                        android:layout_below="@id/he_zuo_zhe_li_run_dian_icon"
+                        android:layout_below="@id/wo_yao_jia_meng_icon"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="@dimen/main_text_margin_top"
-                        android:text="合作者利润点"
+                        android:text="我要加盟"
                         android:textColor="#FFFFFF"
                         android:textSize="@dimen/main_text_font_size" />
                 </RelativeLayout>
